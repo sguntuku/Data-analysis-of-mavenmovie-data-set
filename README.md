@@ -20,6 +20,7 @@ I used the following SQL scripts to extract the required data from the maven-mov
 ## 1. Rental Trends:
 
 Analyze the monthly rental trends over the available data period.
+
 ## SQL Code
 select date_format(rental_date,'%m-%Y') as monthly_rental_date, count(rental_id) as rental_count from rental group by monthly_rental_date;
 After extracting the data to Excel, I inserted a pivot table and made graphical presentations which shows monthly rental trends
@@ -67,10 +68,10 @@ After extracting the data to Excel, I inserted a pivot table and made graphical 
 ![image](https://github.com/user-attachments/assets/6c70ec1e-b3be-4b8a-a030-171d74df93ce)
 
 
-
 ## 3. Store Performance:
 
 Identify which store generates the highest rental revenue.
+
 ## SQL Code
 select store.store_id,sum(amount) from store
 inner join inventory
